@@ -1,11 +1,25 @@
-.dropdown-header {
-  border: 1px solid black;
+button {
+  appearance: none;
+  border: none;
+  background-color: rgb(63, 71, 71);
+  color: white;
+  padding: 15px;
+  width: 100px;
+}
+
+.header-btn {
+  font-size: 20px;
+
 }
 
 .hide {
   display: none;
 }
 
-.visible {
-  display: block;
+.item-btn:hover {
+  background-color: rgb(104, 113, 113);
+}
+
+.container {
+  display: flex;
 }
