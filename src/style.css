@@ -1,19 +1,26 @@
-button {
+/* button {
   appearance: none;
   border: none;
   background-color: rgb(63, 71, 71);
   color: white;
   padding: 15px;
   width: 100px;
-}
+  box-sizing: border-box;
+} */
 
 .header-btn {
   font-size: 20px;
-
 }
 
 .hide {
   display: none;
+}
+
+.top-nav {
+  display: flex;
+  float: left;
+  overflow: hidden;
+  min-width: 100vw;
 }
 
 .item-btn:hover {
@@ -22,4 +29,36 @@ button {
 
 .container {
   display: flex;
+  flex-direction: column;
+}
+
+/* CAROUSEL */
+img {
+  width: 500px;
+}
+
+.carousel-frame {
+  display: flex;
+}
+
+.image-display {
+  display: flex;
+  border: 1px solid red;
+  width: 600px;
+  margin-left: 25%;
+  align-items: center;
+  /* margin-right: 25%; */
+}
+
+.prev-btn,
+.next-btn {
+  appearance: none;
+  border: none;
+  background-color: rgb(63, 71, 71);
+  color: white;
+  padding: 15px;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  text-align: center;
 }
