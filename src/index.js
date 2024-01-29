@@ -5,9 +5,27 @@ import "./style.css";
 // dropdown();
 // loadNavbarLogic();
 
+// const numArray = [1, 2, 3, 4, 5];
+// let i = 0;
+
+// function nextValue(array) {
+//   if (i === array.length) {
+//     i = 0;
+//     console.log(array[i++]);
+//   } else {
+//     console.log(array[i++]);
+//   }
+// }
+
+// nextValue(numArray);
+// nextValue(numArray);
+
 let i = 0;
+let j = 0;
 const imgArray = [];
 const imageDiv = document.querySelectorAll(".image-div");
+const imageDisplay = document.querySelector(".image-display");
+const carousel = document.querySelector('.carousel-frame');
 const nextBtn = document.querySelector(".next-btn");
 
 imageDiv.forEach((img) => {
@@ -15,16 +33,19 @@ imageDiv.forEach((img) => {
   imgArray.push(img);
 });
 
-console.log(imgArray);
-
+// console.log(i);
 function nextSlide() {
-  imgArray[0].classlist.add('first-image');
+  const indexDiv = document.querySelectorAll("[index]");
+
+  carousel.appendChild(indexDiv[j]);
+
+  imageDisplay.appendChild(indexDiv[++j]);
+  console.log(j);
+
 }
 
 nextSlide();
-// Create display div with next and previous buttons
-// Store all image divs inside of an array and add index attribute
-// Show initial image inside of display div
-// When next is pressed
-// - Add a "front-img" class to next image in array
-// - Transition that image to the left
+nextSlide();
+// nextSlide(imgArray);
+// nextSlide(imgArray);
+
