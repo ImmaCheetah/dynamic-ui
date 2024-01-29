@@ -62,3 +62,13 @@ img {
   box-sizing: border-box;
   text-align: center;
 }
+
+.fade-out {
+  transition: opacity 1s;
+  opacity: 0;
+}
+
+.fade-in {
+  transition: opacity 1s;
+  opacity: 1;
+}
