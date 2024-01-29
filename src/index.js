@@ -34,18 +34,19 @@ imageDiv.forEach((img) => {
 });
 
 // console.log(i);
+const indexDiv = document.querySelectorAll("[index]");
 function nextSlide() {
-  const indexDiv = document.querySelectorAll("[index]");
-
   carousel.appendChild(indexDiv[j]);
 
-  imageDisplay.appendChild(indexDiv[++j]);
+  j++;
+
+  imageDisplay.appendChild(indexDiv[j]);
   console.log(j);
 
 }
 
 nextSlide();
 nextSlide();
-// nextSlide(imgArray);
+nextSlide(imgArray);
 // nextSlide(imgArray);
 
