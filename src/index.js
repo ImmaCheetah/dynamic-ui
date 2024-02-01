@@ -13,6 +13,7 @@ const imageDisplay = document.querySelector(".image-display");
 const carousel = document.querySelector(".carousel-frame");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
+const circleBtn = document.querySelectorAll(".circle");
 
 imageDiv.forEach((img) => {
   imgArray.push(img);
@@ -48,6 +49,16 @@ function previousSlide() {
   console.log(currentSlide);
 }
 
+
+circleBtn.forEach(btn => {
+  btn.setAttribute("index", j++);
+   
+  btn.addEventListener('click', () => {
+    currentSlide = btn.getAttribute("index");
+    console.log(currentSlide);
+    showImage(currentSlide);
+  })
+})
 // showImage(2);
 
 nextBtn.addEventListener("click", nextSlide);
