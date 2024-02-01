@@ -20,7 +20,7 @@ import "./style.css";
 // nextValue(numArray);
 // nextValue(numArray);
 
-let i = 0;
+let currentSlide = 0;
 let j = 0;
 const imgArray = [];
 const imageDiv = document.querySelectorAll(".image-div");
@@ -30,58 +30,42 @@ const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
 
 imageDiv.forEach((img) => {
-  img.setAttribute("index", i++);
   imgArray.push(img);
+  img.classList.add('hide');
 });
 
-const indexDiv = document.querySelectorAll("[index]");
-console.log(indexDiv.length);
+function showImage(index) {
+  imageDiv.forEach(img => {
+    img.classList.add('hide')
+  })
+  imageDiv[index].classList.remove('hide');
+}
+
+imgArray[currentSlide].classList.remove('hide');
 
 function nextSlide() {
-  if (j === imgArray.length) {
-    j = 0;
-    console.log(imgArray[j++]);
+  if (currentSlide === imgArray.length) {
+    currentSlide = 0;
+    showImage(currentSlide++);
   } else {
-    // console.log(indexDiv[i++]);
-
-    imgArray[j++].classList.add("move-left");
-    imageDisplay.appendChild(imgArray[j]);
+    showImage(currentSlide++);
   }
+  console.log(currentSlide);
 }
 
 function previousSlide() {
-  if (j === imgArray.length) {
-    j = 0;
-    console.log(imgArray[j++]);
+  if (currentSlide < 1) {
+    currentSlide = imgArray.length;
+    showImage(currentSlide--);
   } else {
-    // console.log(indexDiv[i++]);
-    imgArray[j++].classList.add("move-right");
+    showImage(currentSlide--);
   }
+  console.log(currentSlide);
 }
+
+
+
+// showImage(2);
 
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", previousSlide);
-
-// nextSlide();
-// nextSlide();
-// nextSlide();
-// nextSlide(imgArray);
-// if (j === indexDiv.length - 1) {
-//   // Move div outside of display
-//   indexDiv[j].classList.add("fade-out");
-//   carousel.appendChild(indexDiv[j]);
-
-//   indexDiv[j + 1].classList.add(".fade-in");
-//   imageDisplay.appendChild(indexDiv[++j]);
-//   // indexDiv[j].classList.add('fade-out');
-
-//   j = 0;
-// } else {
-//   indexDiv[j].classList.add("fade-out");
-//   carousel.appendChild(indexDiv[j]);
-
-//   indexDiv[j + 1].classList.add("fade-in");
-//   imageDisplay.appendChild(indexDiv[++j]);
-// }
-// console.log(j);
-// indexDiv[j].classList.add("fade-out");
