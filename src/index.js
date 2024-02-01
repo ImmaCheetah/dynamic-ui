@@ -5,21 +5,6 @@ import "./style.css";
 // dropdown();
 // loadNavbarLogic();
 
-// const numArray = [1, 2, 3, 4, 5];
-// let i = 0;
-
-// function nextValue(array) {
-//   if (i === array.length) {
-//     i = 0;
-//     console.log(array[i++]);
-//   } else {
-//     console.log(array[i++]);
-//   }
-// }
-
-// nextValue(numArray);
-// nextValue(numArray);
-
 let currentSlide = 0;
 let j = 0;
 const imgArray = [];
@@ -44,26 +29,24 @@ function showImage(index) {
 imgArray[currentSlide].classList.remove('hide');
 
 function nextSlide() {
-  if (currentSlide === imgArray.length) {
+  if (currentSlide === imgArray.length - 1) {
     currentSlide = 0;
-    showImage(currentSlide++);
+    showImage(currentSlide);
   } else {
-    showImage(currentSlide++);
+    showImage(++currentSlide);
   }
   console.log(currentSlide);
 }
 
 function previousSlide() {
   if (currentSlide < 1) {
-    currentSlide = imgArray.length;
-    showImage(currentSlide--);
+    currentSlide = imgArray.length - 1;
+    showImage(currentSlide);
   } else {
-    showImage(currentSlide--);
+    showImage(--currentSlide);
   }
   console.log(currentSlide);
 }
-
-
 
 // showImage(2);
 

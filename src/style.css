@@ -12,10 +12,6 @@
   font-size: 20px;
 }
 
-.hide {
-  display: none;
-}
-
 .top-nav {
   display: flex;
   float: left;
